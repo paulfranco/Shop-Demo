@@ -267,14 +267,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-jO-l7h">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-jO-l7h">
                                                     <rect key="frame" x="0.0" y="5" width="374" height="144"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morelia1" translatesAutoresizingMaskIntoConstraints="NO" id="lse-ns-BSo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="145.5" height="144"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="144"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-xe-Sjp">
-                                                            <rect key="frame" x="228.5" y="0.0" width="145.5" height="144"/>
+                                                            <rect key="frame" x="194" y="0.0" width="180" height="144"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Morelia Series 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smc-NC-Sg0">
                                                                     <rect key="frame" x="0.0" y="0.0" width="119.5" height="49.5"/>
@@ -294,6 +294,9 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRx-cs-FjM">
                                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                             <state key="normal" title="-"/>
+                                                                            <connections>
+                                                                                <action selector="quantityLessButtonPressed:" destination="OZb-Bf-Hhd" eventType="touchUpInside" id="b32-QA-Fkz"/>
+                                                                            </connections>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-es-KdR">
                                                                             <rect key="frame" x="68" y="0.0" width="7.5" height="30"/>
@@ -304,6 +307,9 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICk-9v-Vs4">
                                                                             <rect key="frame" x="113.5" y="0.0" width="30" height="30"/>
                                                                             <state key="normal" title="+"/>
+                                                                            <connections>
+                                                                                <action selector="quantityMoreButtonPressed:" destination="OZb-Bf-Hhd" eventType="touchUpInside" id="llw-R2-14B"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                 </stackView>
@@ -319,6 +325,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="YLb-jO-l7h" secondAttribute="bottom" constant="5" id="wek-7C-XfM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productImage" destination="lse-ns-BSo" id="Lda-TL-gkV"/>
+                                            <outlet property="productName" destination="Smc-NC-Sg0" id="f2C-Ae-SAS"/>
+                                            <outlet property="productPrice" destination="hOm-vW-aiY" id="cTb-xr-OCy"/>
+                                            <outlet property="quantityLabel" destination="Ucb-es-KdR" id="Pdb-Rv-1GM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
