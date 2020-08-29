@@ -7,17 +7,23 @@
 
 import Foundation
 
-struct Cart {
+struct Cart: Equatable {
+    
+    
     var product: Product
     var quantity: Int
-    var totalPrice: Int
+    var totalPrice: Double
     
-    init(product: Product, quantity: Int, totalPrice: Int) {
+    init(product: Product, quantity: Int, totalPrice: Double) {
         self.product = product
         self.quantity = quantity
         self.totalPrice = totalPrice
     }
     
+    // Equatable Protocol
+    static func == (lhs: Cart, rhs: Cart) -> Bool {
+        <#code#>
+    }
 }
 
 
