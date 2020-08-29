@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var featuredProductsCollectionView: UICollectionView!
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         featuredProductsCollectionView.dataSource = self
@@ -33,6 +34,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         return FeaturedCell()
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let featuredProduct = DataService.instance.getFeaturedProducts()[indexPath.row]
+        performSegue(withIdentifier: "goToProductDetails", sender: featuredProduct)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productDetailsVC = segue.destination as? ProductDetailsVC {
+            
+            //pass the shoe data to the productDetailsVC
+            productDetailsVC.product = sender as? Product
+        }
+        
+    }
 }
 

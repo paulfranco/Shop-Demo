@@ -132,17 +132,17 @@
                     <navigationItem key="navigationItem" id="f1Q-9t-UzI"/>
                     <connections>
                         <outlet property="featuredProductsCollectionView" destination="ppx-Ah-YOG" id="sxg-Zc-56b"/>
-                        <segue destination="MvH-Yw-SdY" kind="show" id="smd-YO-ySk"/>
+                        <segue destination="MvH-Yw-SdY" kind="show" identifier="goToProductDetails" id="smd-YO-ySk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1300" y="140"/>
         </scene>
-        <!--View Controller-->
+        <!--Product DetailsVC-->
         <scene sceneID="EIM-51-2y9">
             <objects>
-                <viewController id="MvH-Yw-SdY" sceneMemberID="viewController">
+                <viewController id="MvH-Yw-SdY" customClass="ProductDetailsVC" customModule="Shop_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JO3-iZ-kuc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,6 +202,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVM-Jz-39Q">
                                 <rect key="frame" x="20" y="812" width="374" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buyButton:" destination="MvH-Yw-SdY" eventType="touchUpInside" id="1hA-Uk-Eyz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bhv-my-cg4"/>
@@ -229,6 +232,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U27-IQ-orO"/>
+                    <connections>
+                        <outlet property="productDetailsLabel" destination="Nb5-Vw-zER" id="BUG-Y6-wPf"/>
+                        <outlet property="productImage" destination="Sww-b5-PL4" id="GaF-cV-wnJ"/>
+                        <outlet property="productPriceLabel" destination="q65-FN-Q7x" id="IaI-76-OjW"/>
+                        <outlet property="productTitleLabel" destination="ns5-wc-uaK" id="naW-1U-1Qx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4c-fN-gYX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
