@@ -11,10 +11,10 @@ class DataService {
     static let instance = DataService()
     
     private let featuredProducts = [
-        Product(productTitle: "Morelia Series 1", productImage: "morelia1.png", productPrice: 19.99),
-        Product(productTitle: "Morelia Series 2", productImage: "morelia2.png", productPrice: 29.99),
-        Product(productTitle: "Morelia Series 1", productImage: "morelia1.png", productPrice: 19.99),
-        Product(productTitle: "Morelia Series 2", productImage: "morelia2.png", productPrice: 29.99)
+        Product(productTitle: "Morelia Series 1", productImage: "morelia1.png", productPrice: 19.99, productDescription: "djkjs djsk jdsk dj djks djk dsdj ksd ks"),
+        Product(productTitle: "Morelia Series 2", productImage: "morelia2.png", productPrice: 29.99, productDescription: "djkjs djsk jdsk dj djks djk dsdj ksd ks"),
+        Product(productTitle: "Morelia Series 1", productImage: "morelia1.png", productPrice: 19.99, productDescription: "djkjs djsk jdsk dj djks djk dsdj ksd ks"),
+        Product(productTitle: "Morelia Series 2", productImage: "morelia2.png", productPrice: 29.99, productDescription: "djkjs djsk jdsk dj djks djk dsdj ksd ks")
     ]
     
     func getFeaturedProducts() -> [Product] {
