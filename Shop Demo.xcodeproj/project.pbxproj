@@ -14,6 +14,8 @@
 		033E623124FA1D170007865C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033E623024FA1D170007865C /* Assets.xcassets */; };
 		033E623424FA1D170007865C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 033E623224FA1D170007865C /* LaunchScreen.storyboard */; };
 		033E624024FA202C0007865C /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E623F24FA202C0007865C /* FeaturedCell.swift */; };
+		033E624224FA242A0007865C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E624124FA242A0007865C /* Product.swift */; };
+		033E624424FA28050007865C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033E624324FA28050007865C /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		033E623324FA1D170007865C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		033E623524FA1D170007865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033E623F24FA202C0007865C /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
+		033E624124FA242A0007865C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		033E624324FA28050007865C /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		033E623B24FA1D290007865C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				033E624124FA242A0007865C /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 		033E623E24FA1D400007865C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				033E624324FA28050007865C /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -174,6 +180,8 @@
 			files = (
 				033E622C24FA1D160007865C /* ViewController.swift in Sources */,
 				033E624024FA202C0007865C /* FeaturedCell.swift in Sources */,
+				033E624224FA242A0007865C /* Product.swift in Sources */,
+				033E624424FA28050007865C /* DataService.swift in Sources */,
 				033E622824FA1D160007865C /* AppDelegate.swift in Sources */,
 				033E622A24FA1D160007865C /* SceneDelegate.swift in Sources */,
 			);
