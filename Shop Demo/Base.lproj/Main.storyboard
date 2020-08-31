@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="height" constant="25" id="m03-8E-jNR"/>
                                 </constraints>
                                 <state key="normal" image="cart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="shoppingCartButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c8L-1K-Ebl"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-Ah-YOG">
                                 <rect key="frame" x="0.0" y="128" width="414" height="210"/>
@@ -133,6 +136,7 @@
                     <connections>
                         <outlet property="featuredProductsCollectionView" destination="ppx-Ah-YOG" id="sxg-Zc-56b"/>
                         <segue destination="MvH-Yw-SdY" kind="show" identifier="goToProductDetails" id="smd-YO-ySk"/>
+                        <segue destination="1nn-ob-Dcz" kind="show" identifier="goToCartFromMain" id="SjH-Py-NLe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -242,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4c-fN-gYX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-600" y="139.95535714285714"/>
+            <point key="canvasLocation" x="-603" y="-341"/>
         </scene>
         <!--CartVC-->
         <scene sceneID="dwb-dS-4e4">
@@ -454,6 +458,9 @@
             <point key="canvasLocation" x="-1984" y="140"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SjH-Py-NLe"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>

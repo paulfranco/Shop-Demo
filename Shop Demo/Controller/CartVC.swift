@@ -49,8 +49,6 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pare
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as? CartTableViewCell {
                     let cartProduct = shoppingCartItems[indexPath.row]
                     
-                    print("cartProduct in tableViewCellForRowAt = \(cartProduct)")
-                    
                     cell.updateViews(item: cartProduct)
                     cell.parentTableViewDelegate = self
                     return cell
@@ -62,14 +60,20 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pare
     }
     
     func getShoppingCartTotalPrice() {
+        var itemTotalPrice: Double = 0.00
+        var cartTotal: Double = 0.00
         
         for item in shoppingCartItems {
-            var itemTotalPrice: Double
+            
             itemTotalPrice = Double(item.quantity) * item.totalPrice
-            subtotal = itemTotalPrice
+            cartTotal += itemTotalPrice
+            
         }
-        totalPrice = subtotal + tax + shipping
+        subtotal = cartTotal
         tax = subtotal * 0.10
+        totalPrice = subtotal + tax + shipping
+        
+        
         subtotalLabel.text = "$ \(subtotal)"
         taxLabel.text = "$ \(tax)"
         shippingLabel.text = "$ \(shipping)"

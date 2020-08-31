@@ -46,7 +46,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             //pass the shoe data to the productDetailsVC
             productDetailsVC.product = sender as? Product
         }
-        
     }
+    
+    @IBAction func shoppingCartButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToCartFromMain", sender: (Any).self)    }
 }
 
