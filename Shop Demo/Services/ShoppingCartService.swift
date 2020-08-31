@@ -9,29 +9,61 @@ import Foundation
 
 class ShoppingCartService {
     static let instance = ShoppingCartService()
-    private(set) var item: Cart!
-    private(set) var shoppingCartItems = [Cart]()
+    private(set) var item: Item!
+    private(set) var shoppingCartItems = [Item]()
     
-    func getCart() -> [Cart] {
+    func getCart() -> [Item] {
         return shoppingCartItems
     }
     
     func addProductToCart(productAdded: Product?) {
         if let product = productAdded {
-            //create a product item
-            item = Cart(product: product, quantity: 1, totalPrice: product.productPrice)
+            //create a shoppingCart
+            item = Item(product: product, quantity: 1, totalPrice: product.productPrice)
             
-            //  check if the incoming product is already in the cart
-            // Referencing instance method 'contains' on 'Sequence' requires that 'Cart' conform to 'Equatable'
             if shoppingCartItems.contains(item) {
                 // if it is then modify the quantity of the item
-                handleCartItemQuantity(addCart: item, addCartItemAction: 1)
+                updateShoppingCartItemQuantity(items: item, itemsPurchased: 1)
             }
             else {
-                //its not in the cart - add the shoe
+                //its not in the cart - add the shopingCart
                 shoppingCartItems.append(item)
             }
         }
+    }
+    
+    func updateShoppingCartItemQuantity(items cartItems: Item, itemsPurchased purchased: Int) {
+        
+        //get the index of the cart item array
+        if let itemIndex = shoppingCartItems.firstIndex(of: cartItems) {
+            //assign the content of the incoming cartItems array to cart
+            item = cartItems
+            //get the current quantity
+            var quantity = shoppingCartItems[itemIndex].quantity
+            
+            //add
+            if purchased == 1 {
+                quantity += 1
+            }
+            //subtract
+            else if purchased == 0 {
+                quantity -= 1
+                if quantity == 0 {
+                    //remove the item from the shopping cart array
+                    shoppingCartItems.remove(at: itemIndex)
+                    //exit out of function
+                    return
+                }
+            }
+            //set the new quantity to the shopping cart item quantity
+            item.quantity = quantity
+            //update the shopping cart item array with the new shopping cart array
+            shoppingCartItems[itemIndex] = item
+        }
+    }
+    
+    func clearShoppingCartItems() {
+        shoppingCartItems.removeAll()
     }
     
 }

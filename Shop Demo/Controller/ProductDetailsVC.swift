@@ -18,12 +18,12 @@ class ProductDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        productImage.image = UIImage(named: product.productImage)
-        productTitleLabel.text = product.productTitle
-        productPriceLabel.text = String(product.productPrice)
-        productDetailsLabel.text = product.productDescription
-        
+        if let product = product {
+            productImage.image = UIImage(named: product.productImage)
+            productTitleLabel.text = product.productTitle
+            productPriceLabel.text = String(product.productPrice)
+            productDetailsLabel.text = product.productDescription
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +38,9 @@ class ProductDetailsVC: UIViewController {
     }
     */
     @IBAction func buyButton(_ sender: UIButton) {
-    }
+        if let product = product {
+            ShoppingCartService.instance.addProductToCart(productAdded: product)
+        }
+        performSegue(withIdentifier: "goToCart", sender: product)    }
     
 }

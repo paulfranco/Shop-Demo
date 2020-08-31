@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Cart: Equatable {
+struct Item: Equatable {
     
     
     var product: Product
@@ -21,8 +21,8 @@ struct Cart: Equatable {
     }
     
     // Equatable Protocol
-    static func == (lhs: Cart, rhs: Cart) -> Bool {
-        <#code#>
+    static func == (lhs: Item, rhs: Item) -> Bool {
+        return lhs.product == rhs.product
     }
 }
 

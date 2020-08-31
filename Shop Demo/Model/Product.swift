@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product {
+struct Product: Equatable {
     private(set) public var productTitle: String
     private(set) public var productImage: String
     private(set) public var productPrice: Double
