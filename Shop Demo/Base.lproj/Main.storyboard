@@ -172,6 +172,9 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="wKI-gC-m2z"/>
                                 </constraints>
                                 <state key="normal" image="cart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="shoppingCartButtonPressed:" destination="MvH-Yw-SdY" eventType="touchUpInside" id="hRF-yu-YmA"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="morelia1" translatesAutoresizingMaskIntoConstraints="NO" id="Sww-b5-PL4">
                                 <rect key="frame" x="20" y="131" width="374" height="202"/>
@@ -459,7 +462,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SjH-Py-NLe"/>
+        <segue reference="OAx-iC-m8K"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>

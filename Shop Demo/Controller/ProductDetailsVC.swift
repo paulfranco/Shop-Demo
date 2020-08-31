@@ -41,6 +41,11 @@ class ProductDetailsVC: UIViewController {
         if let product = product {
             ShoppingCartService.instance.addProductToCart(productAdded: product)
         }
-        performSegue(withIdentifier: "goToCart", sender: product)    }
+        performSegue(withIdentifier: "goToCart", sender: product)
+        
+    }
     
+    @IBAction func shoppingCartButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToCart", sender: (Any).self)
+    }
 }
