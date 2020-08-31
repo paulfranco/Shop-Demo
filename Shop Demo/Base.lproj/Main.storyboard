@@ -107,7 +107,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="U1j-m3-GbJ"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRa-wI-6ed">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRa-wI-6ed">
                                 <rect key="frame" x="20" y="99" width="141" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="141" id="40F-Ct-nzx"/>
@@ -119,15 +119,68 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop by category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcE-Xw-rnR">
+                                <rect key="frame" x="20" y="348" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HBT-SU-boy">
+                                <rect key="frame" x="0.0" y="377" width="414" height="509"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="138" id="UzY-Wn-nYH" customClass="CategoryTableViewCell" customModule="Shop_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="138"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UzY-Wn-nYH" id="Udq-Pn-FZ8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccer_jerseys1" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-nM-AH3">
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jerseys" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2v-XC-jQl">
+                                                    <rect key="frame" x="161" y="54" width="92.5" height="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="3bc-nM-AH3" secondAttribute="trailing" id="1Gh-dx-yle"/>
+                                                <constraint firstItem="3bc-nM-AH3" firstAttribute="top" secondItem="Udq-Pn-FZ8" secondAttribute="top" constant="5" id="2OF-oy-Qkk"/>
+                                                <constraint firstAttribute="bottom" secondItem="3bc-nM-AH3" secondAttribute="bottom" constant="5" id="9Fi-CD-8FA"/>
+                                                <constraint firstItem="B2v-XC-jQl" firstAttribute="centerY" secondItem="Udq-Pn-FZ8" secondAttribute="centerY" id="Ffc-mG-ehg"/>
+                                                <constraint firstItem="B2v-XC-jQl" firstAttribute="centerX" secondItem="Udq-Pn-FZ8" secondAttribute="centerX" id="NzP-2M-4y6"/>
+                                                <constraint firstItem="3bc-nM-AH3" firstAttribute="leading" secondItem="Udq-Pn-FZ8" secondAttribute="leading" id="tkk-8H-PwZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryImage" destination="3bc-nM-AH3" id="V7Q-T5-Pxy"/>
+                                            <outlet property="categoryName" destination="B2v-XC-jQl" id="Zge-vo-4l7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xm4-H4-YMm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tap-xp-vQW"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YZG-vf-EGd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="0d9-Lf-EMO"/>
+                            <constraint firstItem="HBT-SU-boy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3AY-4r-iVi"/>
+                            <constraint firstItem="HBT-SU-boy" firstAttribute="top" secondItem="xcE-Xw-rnR" secondAttribute="bottom" constant="8" id="G6f-cs-i4W"/>
+                            <constraint firstItem="HBT-SU-boy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="K04-Kz-Tn1"/>
+                            <constraint firstAttribute="bottom" secondItem="HBT-SU-boy" secondAttribute="bottom" constant="10" id="Nda-yh-Wdf"/>
                             <constraint firstItem="QRa-wI-6ed" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="S45-ta-lbQ"/>
+                            <constraint firstItem="xcE-Xw-rnR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TtL-Es-DPT"/>
                             <constraint firstItem="ppx-Ah-YOG" firstAttribute="top" secondItem="YZG-vf-EGd" secondAttribute="bottom" constant="5" id="Zf5-a7-Lcb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YZG-vf-EGd" secondAttribute="trailing" constant="20" id="atY-q5-y8J"/>
                             <constraint firstItem="ppx-Ah-YOG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="frn-6L-2pW"/>
+                            <constraint firstItem="xcE-Xw-rnR" firstAttribute="top" secondItem="ppx-Ah-YOG" secondAttribute="bottom" constant="10" id="mgK-sA-dm2"/>
                             <constraint firstItem="ppx-Ah-YOG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qfp-5f-H3x"/>
                             <constraint firstItem="QRa-wI-6ed" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ve6-0P-GkZ"/>
                         </constraints>
@@ -141,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1300" y="140"/>
+            <point key="canvasLocation" x="-1300" y="139.95535714285714"/>
         </scene>
         <!--Product DetailsVC-->
         <scene sceneID="EIM-51-2y9">
@@ -442,7 +495,7 @@
                         <outlet property="subtotalLabel" destination="sr5-PQ-39l" id="DMW-LK-lOy"/>
                         <outlet property="taxLabel" destination="31e-oi-zGR" id="niX-hg-IOj"/>
                         <outlet property="totalLabel" destination="waW-eB-AbV" id="z0o-m6-rrB"/>
-                        <segue destination="T0R-Xv-zti" kind="show" identifier="paymentSuccess" id="HYf-Yw-zWn"/>
+                        <segue destination="T0R-Xv-zti" kind="show" identifier="PaymentSuccess" id="HYf-Yw-zWn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdh-44-aUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -508,13 +561,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OAx-iC-m8K"/>
+        <segue reference="SjH-Py-NLe"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
         <image name="morelia1" width="800" height="534"/>
+        <image name="soccer_jerseys1" width="2560" height="1440"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
