@@ -87,6 +87,9 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pare
             getShoppingCartTotalPrice()
             shoppingCartTableView.reloadData()
     }
+    @IBAction func purchaseButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "paymentSuccess", sender: (Any).self)
+    }
     
 }
 

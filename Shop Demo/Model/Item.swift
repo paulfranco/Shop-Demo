@@ -23,6 +23,7 @@ struct Item: Equatable {
     // Equatable Protocol
     static func == (lhs: Item, rhs: Item) -> Bool {
         return lhs.product == rhs.product
+        
     }
 }
 
