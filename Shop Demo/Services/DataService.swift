@@ -26,7 +26,8 @@ class DataService {
     
     private let categories = [
         Category(title: "Soccer Shoes", imageName: "soccer_shoes.png"),
-        Category(title: "Soccer Jerseys", imageName: "soccer_jerseys.pn")
+        Category(title: "Soccer Jerseys", imageName: "soccer_jerseys.png"),
+        Category(title: "Soccer Balls", imageName: "soccer_balls.png")
     ]
     
     func getCategories() -> [Category] {

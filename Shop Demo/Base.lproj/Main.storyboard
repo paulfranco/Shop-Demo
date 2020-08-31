@@ -129,7 +129,7 @@
                                 <rect key="frame" x="0.0" y="377" width="414" height="509"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="138" id="UzY-Wn-nYH" customClass="CategoryTableViewCell" customModule="Shop_Demo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="138" id="UzY-Wn-nYH" customClass="CategoryTableViewCell" customModule="Shop_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UzY-Wn-nYH" id="Udq-Pn-FZ8">
@@ -137,7 +137,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccer_jerseys1" translatesAutoresizingMaskIntoConstraints="NO" id="3bc-nM-AH3">
-                                                    <rect key="frame" x="0.0" y="5" width="414" height="128"/>
+                                                    <rect key="frame" x="8" y="5" width="398" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="RZS-5A-gas"/>
+                                                        <constraint firstAttribute="width" constant="398" id="b0t-xx-4qm"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jerseys" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2v-XC-jQl">
                                                     <rect key="frame" x="161" y="54" width="92.5" height="30"/>
@@ -147,12 +151,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="3bc-nM-AH3" secondAttribute="trailing" id="1Gh-dx-yle"/>
+                                                <constraint firstAttribute="trailing" secondItem="3bc-nM-AH3" secondAttribute="trailing" constant="8" id="1Gh-dx-yle"/>
                                                 <constraint firstItem="3bc-nM-AH3" firstAttribute="top" secondItem="Udq-Pn-FZ8" secondAttribute="top" constant="5" id="2OF-oy-Qkk"/>
                                                 <constraint firstAttribute="bottom" secondItem="3bc-nM-AH3" secondAttribute="bottom" constant="5" id="9Fi-CD-8FA"/>
                                                 <constraint firstItem="B2v-XC-jQl" firstAttribute="centerY" secondItem="Udq-Pn-FZ8" secondAttribute="centerY" id="Ffc-mG-ehg"/>
                                                 <constraint firstItem="B2v-XC-jQl" firstAttribute="centerX" secondItem="Udq-Pn-FZ8" secondAttribute="centerX" id="NzP-2M-4y6"/>
-                                                <constraint firstItem="3bc-nM-AH3" firstAttribute="leading" secondItem="Udq-Pn-FZ8" secondAttribute="leading" id="tkk-8H-PwZ"/>
+                                                <constraint firstItem="3bc-nM-AH3" firstAttribute="leading" secondItem="Udq-Pn-FZ8" secondAttribute="leading" constant="8" id="tkk-8H-PwZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -187,6 +191,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="f1Q-9t-UzI"/>
                     <connections>
+                        <outlet property="categoryTableView" destination="HBT-SU-boy" id="oUG-ZA-Hzw"/>
                         <outlet property="featuredProductsCollectionView" destination="ppx-Ah-YOG" id="sxg-Zc-56b"/>
                         <segue destination="MvH-Yw-SdY" kind="show" identifier="goToProductDetails" id="smd-YO-ySk"/>
                         <segue destination="1nn-ob-Dcz" kind="show" identifier="goToCartFromMain" id="SjH-Py-NLe"/>

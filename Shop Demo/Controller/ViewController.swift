@@ -7,17 +7,23 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     
     @IBOutlet weak var featuredProductsCollectionView: UICollectionView!
+    @IBOutlet weak var categoryTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         featuredProductsCollectionView.dataSource = self
         featuredProductsCollectionView.delegate = self
+        
+        categoryTableView.delegate = self
+        categoryTableView.dataSource = self
     }
     
+    // COLLECTION VIEW - FEATURED PRODUCTS
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.featuredProductsCollectionView {
             return DataService.instance.getFeaturedProducts().count
@@ -40,6 +46,26 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         performSegue(withIdentifier: "goToProductDetails", sender: featuredProduct)
     }
     
+    // TABLEVIEW - CATEGORIES
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == self.categoryTableView {
+            let categories = DataService.instance.getCategories().count
+            return categories
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell {
+            let category = DataService.instance.getCategories()[indexPath.row]
+            cell.updateViews(category: category)
+            return cell
+        } else {
+            return CategoryTableViewCell()
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let productDetailsVC = segue.destination as? ProductDetailsVC {
             
@@ -48,6 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    // IBActions
     @IBAction func shoppingCartButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToCartFromMain", sender: (Any).self)    }
 }
