@@ -12,6 +12,10 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var productsTableView: UITableView!
+    
+    private(set) public var products = [Product]()
+    var category: Category!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +37,19 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        if tableView == self.productsTableView {
+            return products.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsTableViewCell", for: indexPath) as? ProductsTableViewCell {
+            let item = products[indexPath.row]
+            cell.updateView(product: item)
+            return cell
+        } else {
+            return ProductsTableViewCell()
+        }
     }
 }

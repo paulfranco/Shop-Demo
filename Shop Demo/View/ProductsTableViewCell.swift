@@ -23,5 +23,11 @@ class ProductsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func updateView(product: Product) {
+        productImage.image = UIImage(named: product.productImage)
+        productTitleLabel.text = product.productTitle
+        productPriceLabel.text = String(product.productPrice)
+    }
 
 }

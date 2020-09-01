@@ -65,6 +65,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: Need to add segue and implement this function
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let productDetailsVC = segue.destination as? ProductDetailsVC {
