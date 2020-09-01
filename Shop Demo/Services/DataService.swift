@@ -52,5 +52,29 @@ class DataService {
         Product(productTitle: "Ireland Away Jersey", productImage: "ireland.png", productPrice: 29.78, productDescription: "Ireland Away Jersey. The same jersey they wore in the 2018 World Cup!")
     ]
     
+    func getProducts(categoryTitle: String) -> [Product] {
+        switch categoryTitle {
+        case "Soccer Balls":
+            return getSoccerBalls()
+        case "Soccer Shoes":
+            return getSoccerShoes()
+        case "Soccer Jerseys":
+            return getSoccerJerseys()
+        default:
+            return getSoccerShoes()
+        }
+    }
+    
+    func getSoccerJerseys() -> [Product] {
+        return soccerJerseys
+    }
+    
+    func getSoccerShoes() -> [Product] {
+        return soccerShoes
+    }
+    
+    func getSoccerBalls() -> [Product] {
+        return soccerBalls
+    }
     
 }
