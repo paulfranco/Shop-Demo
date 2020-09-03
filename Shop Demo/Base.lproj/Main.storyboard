@@ -391,9 +391,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVM-Jz-39Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVM-Jz-39Q" customClass="CustomButton" customModule="Shop_Demo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="812" width="374" height="30"/>
-                                <state key="normal" title="Add to cart"/>
+                                <color key="backgroundColor" red="0.1268461045" green="0.5352632705" blue="0.99159888699999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add to cart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="buyButton:" destination="MvH-Yw-SdY" eventType="touchUpInside" id="1hA-Uk-Eyz"/>
                                 </connections>
@@ -585,9 +588,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXg-El-CB8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXg-El-CB8" customClass="CustomButton" customModule="Shop_Demo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="812" width="374" height="30"/>
-                                <state key="normal" title="Purchase"/>
+                                <color key="backgroundColor" red="0.1268461045" green="0.5352632705" blue="0.99159888699999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Purchase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="purchaseButtonPressed:" destination="1nn-ob-Dcz" eventType="touchUpInside" id="1bE-Qy-tSq"/>
                                 </connections>
@@ -693,7 +699,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SjH-Py-NLe"/>
+        <segue reference="OAx-iC-m8K"/>
         <segue reference="smd-YO-ySk"/>
     </inferredMetricsTieBreakers>
     <resources>
