@@ -36,7 +36,7 @@ class DataService {
     
     private let soccerBalls = [
         Product(productTitle: "Messi Capitano", productImage: "messi_capitano", productPrice: 13.99, productDescription: "Master your skills with a ball displaying the name of the world's greatest player. This hard-wearing soccer ball is built for training and recreation. Its TPU cover is machine stitched for durability, and the butyl bladder keeps it inflated and ready for action."),
-        Product(productTitle: "Adiddas UCL Finale", productImage: "addidas_ucl", productPrice: 28.99, productDescription: "Champions do battle where two worlds collide. The lush graphics on this adidas soccer ball flow from the UEFA Champions League official ball. Its seamless design and FIFA stamp mean you'll have no excuses when you send it over the fence during shooting practice."),
+        Product(productTitle: "Adiddas UCL Finale", productImage: "adiddas_ucs", productPrice: 28.99, productDescription: "Champions do battle where two worlds collide. The lush graphics on this adidas soccer ball flow from the UEFA Champions League official ball. Its seamless design and FIFA stamp mean you'll have no excuses when you send it over the fence during shooting practice."),
         Product(productTitle: "Adidas MLS Nativo", productImage: "mls_nativo", productPrice: 19.99, productDescription: "Celebrating 25 consecutive years of elite club soccer in the US and Canada. Created for scrimmages, this adidas MLS Nativo XXV Club Ball has a dynamic design that's based on the look of the MLS official ball. The machine-stitched construction and butyl bladder mean it's ready to roll whenever you are.")
     ]
     

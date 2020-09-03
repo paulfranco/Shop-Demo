@@ -12,6 +12,7 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var productsTableView: UITableView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     private(set) public var products = [Product]()
     var category: Category!
@@ -21,8 +22,6 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         productsTableView.delegate = self
         productsTableView.dataSource = self
-        
-        print("----------------- reached here---------------")
 
         // Do any additional setup after loading the view.
         if let selectedCategory = category {
@@ -35,19 +34,9 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func initProducts(category: Category) {
         products = DataService.instance.getProducts(categoryTitle: category.title)
-        
+        categoryLabel.text = category.title
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.productsTableView {
@@ -72,4 +61,16 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let selectedProduct = products[indexPath.row]
         performSegue(withIdentifier: "goToDetailFromProducts", sender: selectedProduct)
     }
+    
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let productDetailsVC = segue.destination as? ProductDetailsVC {
+            
+            //pass the shoe data to the productDetailsVC
+            productDetailsVC.product = sender as? Product
+        }
+    }
+    
+    
 }
