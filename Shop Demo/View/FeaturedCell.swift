@@ -12,7 +12,6 @@ class FeaturedCell: UICollectionViewCell {
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     
-    
     func updateView(product: Product) {
         productImage.image = UIImage(named: product.productImage)
         productTitle.text = product.productTitle

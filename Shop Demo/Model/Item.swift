@@ -9,7 +9,6 @@ import Foundation
 
 struct Item: Equatable {
     
-    
     var product: Product
     var quantity: Int
     var totalPrice: Double

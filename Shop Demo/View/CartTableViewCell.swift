@@ -17,12 +17,9 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
 
-    
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     @IBAction func quantityLessButtonPressed(_ sender: UIButton) {
         ShoppingCartService.instance.updateShoppingCartItemQuantity(items: currentItemsInShoppingCart, itemsPurchased: 0)
@@ -39,7 +36,6 @@ class CartTableViewCell: UITableViewCell {
         productPrice.text = "$ \(item.product.productPrice)"
         quantityLabel.text = "\(item.quantity)"
                 
-        //assign the incoming cart to the currentCart for this VC
         currentItemsInShoppingCart = item
         
     }
