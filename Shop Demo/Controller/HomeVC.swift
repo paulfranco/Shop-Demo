@@ -22,6 +22,7 @@ class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
+        self.title = "Soccer Store"
     }
     
     // COLLECTION VIEW - FEATURED PRODUCTS
