@@ -17,7 +17,7 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pare
     
     var shoppingCartItems = ShoppingCartService.instance.getCart()
     var subtotal: Double = 0.00
-    var shipping: Double = 10.00
+    var shipping: Double = 0.00
     var tax: Double = 0.00
     var totalPrice: Double = 0.00
     
@@ -60,13 +60,24 @@ class CartVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Pare
         }
         subtotal = cartTotal
         tax = subtotal * 0.10
+        
+        // TODO: Extract this into its own function
+        if subtotal <= 0 {
+            shipping = 0.00
+        } else {
+            shipping = 10.00
+        }
         totalPrice = subtotal + tax + shipping
         
+        let subtotalFormat = String(format: "%.2f", subtotal)
+        let taxFormat = String(format: "%.2f", tax)
+        let totalPriceFormat = String(format: "%.2f", totalPrice)
+        let shippingFormat = String(format: "%.2f", shipping)
         
-        subtotalLabel.text = "$ \(subtotal)"
-        taxLabel.text = "$ \(tax)"
-        shippingLabel.text = "$ \(shipping)"
-        totalLabel.text = "$ \(totalPrice)"
+        subtotalLabel.text = subtotalFormat
+        taxLabel.text = taxFormat
+        shippingLabel.text = shippingFormat
+        totalLabel.text = totalPriceFormat
     }
     
     
