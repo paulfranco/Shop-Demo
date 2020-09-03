@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var featuredProductsCollectionView: UICollectionView!
@@ -66,7 +66,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Need to add segue and implement this function
         let categories = DataService.instance.getCategories()
         let categorySelected = categories[indexPath.row]
         performSegue(withIdentifier: "goToProducts", sender: categorySelected)
