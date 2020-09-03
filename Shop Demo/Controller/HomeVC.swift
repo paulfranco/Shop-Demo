@@ -13,6 +13,7 @@ class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     @IBOutlet weak var featuredProductsCollectionView: UICollectionView!
     @IBOutlet weak var categoryTableView: UITableView!
     
+    var selectedProduct = DataService.instance.getFeaturedProducts()[0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +88,14 @@ class HomeVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
     }
     
     // IBActions
+    @IBAction func heartButtonPressed(_ sender: UIButton) {
+        
+        ShoppingCartService.instance.addProductToCart(productAdded: selectedProduct)
+        
+        performSegue(withIdentifier: "goToCartFromMain", sender: selectedProduct)
+        
+    }
+    
     @IBAction func shoppingCartButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToCartFromMain", sender: (Any).self)    }
 }

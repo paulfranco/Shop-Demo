@@ -69,6 +69,9 @@
                                                         <constraint firstAttribute="width" constant="25" id="cBi-UC-Hd0"/>
                                                     </constraints>
                                                     <state key="normal" image="heart.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="heartButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PRO-xh-oZn"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morelia Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3X-wU-F9E">
                                                     <rect key="frame" x="20" y="172" width="167" height="24"/>
@@ -690,8 +693,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OAx-iC-m8K"/>
-        <segue reference="BFo-fl-Zle"/>
+        <segue reference="SjH-Py-NLe"/>
+        <segue reference="smd-YO-ySk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
