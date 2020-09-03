@@ -67,14 +67,23 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: Need to add segue and implement this function
+        let categories = DataService.instance.getCategories()
+        let categorySelected = categories[indexPath.row]
+        performSegue(withIdentifier: "goToProducts", sender: categorySelected)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // prepare for product details screen
         if let productDetailsVC = segue.destination as? ProductDetailsVC {
             
             //pass the shoe data to the productDetailsVC
             productDetailsVC.product = sender as? Product
+        }
+        if let productsVC = segue.destination as? ProductsVC {
+            
+            //pass the category data to the productsVC
+            productsVC.category = sender as? Category
         }
     }
     

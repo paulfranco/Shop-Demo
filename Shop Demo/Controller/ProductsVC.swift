@@ -21,8 +21,21 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         productsTableView.delegate = self
         productsTableView.dataSource = self
+        
+        print("----------------- reached here---------------")
 
         // Do any additional setup after loading the view.
+        if let selectedCategory = category {
+            initProducts(category: selectedCategory)
+        }
+            
+       
+        
+    }
+    
+    func initProducts(category: Category) {
+        products = DataService.instance.getProducts(categoryTitle: category.title)
+        
     }
     
 
@@ -47,9 +60,16 @@ class ProductsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductsTableViewCell", for: indexPath) as? ProductsTableViewCell {
             let item = products[indexPath.row]
             cell.updateView(product: item)
+            print("*************reached here*****************")
             return cell
         } else {
+            print("************hahahahahahhahahahaha**********")
             return ProductsTableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedProduct = products[indexPath.row]
+        performSegue(withIdentifier: "goToDetailFromProducts", sender: selectedProduct)
     }
 }
